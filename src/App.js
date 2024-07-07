@@ -18,6 +18,7 @@ import Bags from "./pages/Bags";
 import Kids from "./pages/Kids";
 import Accessories from "./pages/Accessories";
 import Fragrances from "./pages/Fragrances";
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
