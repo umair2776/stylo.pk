@@ -19,6 +19,8 @@ import Kids from "./pages/Kids";
 import Accessories from "./pages/Accessories";
 import Fragrances from "./pages/Fragrances";
 import 'bootstrap/dist/css/bootstrap.css';
+import ProductDescription from "./pages/ProductDescription";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
@@ -34,6 +36,9 @@ function App() {
         <Route path="/kids" element={<Kids />} />
         <Route path="/accessories" element={<Accessories />} />
         <Route path="/fragrances" element={<Fragrances />} />
+        <Route path="/product/:id" element={<ProductDescription />} />
+        <Route path="/signup" element={<Signup/>}/>
+
       </Routes>
       <ToastContainer
         position="top-right"

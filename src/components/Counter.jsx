@@ -10,10 +10,6 @@ const Counter = () => {
         if(counter < 3){
             setCounter(counter+1);
         }
-        else{
-            navigate("/fragrances   ")
-            toast.warning("You cannot add more than 3")
-        }
     }
     const minus=()=>{
         if(counter > 1){
@@ -23,17 +19,11 @@ const Counter = () => {
             toast.warning("You cannot subtract less than 1")
         }
     }
-    const updateValue=()=>{
-        setShow(!show)
-    }
   return (
     <div style={{fontSize:"30px",textAlign:"center"}}>
-        {show?<h1>Hello India won by cheating</h1>:<h1>South Afria is like Pakistan</h1>}
-        <button onClick={updateValue}>Change value</button>
-        {counter === 3 ? <h1>Your account limit is full</h1>:null }
-        <button className='minus' onClick={minus}>-</button>
+        <button className='btn btn-danger' onClick={minus}>-</button>
       {counter}
-      <button className='minus' onClick={add}>+</button>
+      <button className='btn btn-primary' onClick={add}>+</button>
     </div>
   )
 }

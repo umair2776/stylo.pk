@@ -1,6 +1,7 @@
 import React from 'react'
 import { GrYoutube } from "react-icons/gr";
 import { ImFacebook2 } from "react-icons/im";
+import { Link } from 'react-router-dom';
 
 const Prenav2 = () => {
   return (
@@ -14,6 +15,7 @@ const Prenav2 = () => {
       <ImFacebook2 />
       </div>
       </div>
+      <Link to="/signup"><button className='btn btn-primary'>Signup</button></Link>
     </div>
   )
 }

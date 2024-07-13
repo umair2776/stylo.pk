@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import Loader from '../components/Loader'
+import { Link } from 'react-router-dom'
 
 const EidCollection = () => {
   const [products,setProducts]=useState([])
@@ -14,8 +15,7 @@ const EidCollection = () => {
   useEffect(()=>{
     fetchData()
   },[])
-  console.log(loader)
-  console.log(products);
+
   return (
     <>
     {
@@ -23,6 +23,7 @@ const EidCollection = () => {
         {
           products.map((product)=>{
             return(
+              <Link to={`/product/${product.id}`}>
               <div class="card" style={{width: "35rem"}}>
       <img src={product.image} class="card-img-top" style={{height:"100px", width:"100px"}} alt="..."/>
       <div class="card-body">
@@ -32,6 +33,7 @@ const EidCollection = () => {
         <p>Item Sold:{product.rating.count}</p>
       </div>
     </div>
+    </Link>
             )
           })
         }
