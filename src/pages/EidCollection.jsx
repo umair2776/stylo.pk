@@ -8,8 +8,9 @@ const EidCollection = () => {
   const [loader,setLoader]=useState(false);
   const fetchData=async ()=>{
     setLoader(true)
-    const response =await axios.get("https://fakestoreapi.com/products")
-    setProducts(response.data)
+    const response =await axios.get("http://localhost:8082/api/admin/product?category=eidcollection")
+    setProducts(response.data.products)
+    console.log(response)
     setLoader(false)
   }
   useEffect(()=>{
@@ -23,14 +24,12 @@ const EidCollection = () => {
         {
           products.map((product)=>{
             return(
-              <Link to={`/product/${product.id}`}>
+              <Link to={`/product/${product._id}`}>
               <div class="card" style={{width: "35rem"}}>
-      <img src={product.image} class="card-img-top" style={{height:"100px", width:"100px"}} alt="..."/>
+      <img src={product.thumbnail} class="card-img-top" style={{height:"100px", width:"100px"}} alt="..."/>
       <div class="card-body">
         <h5 class="card-title">{product.title}</h5>
-        <p>{product.rating.rate}</p>
         <button className="btn btn-danger">{product.price}</button>
-        <p>Item Sold:{product.rating.count}</p>
       </div>
     </div>
     </Link>

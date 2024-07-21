@@ -10,8 +10,8 @@ const ProductDescription = () => {
     const [loader,setLoader]=useState(false)
     const fetchProduct=async()=>{
         setLoader(true)
-const response=await axios.get(`https://fakestoreapi.com/products/${id}`)
-setProduct(response.data)
+const response=await axios.get(`http://localhost:8082/api/admin/product/${id}`)
+setProduct(response.data.product)
 setLoader(false)
     }
     useEffect(()=>{
@@ -27,7 +27,7 @@ setLoader(false)
                 <div className="row">
                     <div className="col-lg-6">
                         <img 
-                            src={product?.image} 
+                            src={product?.thumbnail} 
                             alt={product?.title} 
                             width="300px" 
                             height="300px" 
